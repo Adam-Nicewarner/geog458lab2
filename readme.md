@@ -2,27 +2,21 @@
 
 **Instructor:** Bo Zhao, 206.685.3846 or zhaobo@uw.edu; **Points Available** = 50
 
-In this practical exercise, we will introduce how to collect Geo-tagged Twitter data using an API-based crawler and visualize them on a map using a mapping tool `QGIS`. A web crawler is a purposely designed bot for online data collection. In most cases, online data can be acquired through a dedicated API maintained by the data provider. This lab exercise focuses on visualizing the spatial distribution of twitter data, which reflects the public perception of a specific topic. As you go through this lab, think about how you can apply this technique to your final project. Below, we will go over in detail the process of developing an API-based crawler and using QGIS to visualize collected data onto a map. Okay, let us get started!
+These are two screenshots of the twitter usage of Australia and the UK at 11:00 PM PST 4/21/22. 
+![](img/AU-screenshot.png)
 
-## 1. Setup the execution environment on the cloud
+![](img/UK-screenshot.png)
 
-In this lab, we will use Google Colab to compile the script in Python. If you have used python for scientific research before, you must already experience the complexity of configuring the execution environment. So, in order not to simplify the process of environment configuration, we decide to execute the crawlers on Google Colab. Google Colab allows its user to compose and execute arbitrary python code directly through the browser, and is especially well suited to machine learning, data analysis and education. There is an embedded Jupyter notebook that requires no setup and has an excellent free version, which gives free access to Google computing resources such as GPUs and TPUs.
+As you can see from the maps, the UK used twitter a large amount more during the 5 minutes the bot was active. This may be due to simple demographics, as the UK has around 16 million active twitter users, while australia has just under 3 million. This was still an interesting thing to graph, as it shows the relatively small population of australia, despite its large landmass. Furthermore, while in australia it was around 4:00 PM, in the UK it was around 7:00 AM, before most people were awake. This suggests if we normalized the relative times and graphed them both at noon, this distance between the tweets from the UK and the tweets from Australia would only increase. 
 
-**Python:** is an interpreted, high-level, general-purpose programming language. Its language constructs and object-oriented approach aim to help programmers write clear, logical code for small and large-scale projects. While there are many python IDE (Integrated development environment) for python, we will use `Jupyter Notebook` to avoid any inconvenience upon environment setup.
+![](img/AU-word-art.png)
 
-**Jupyter Notebook:** is an open-source web application that allows you to create and share documents that contain live code, equations, visualizations, and narrative text. Uses include data cleaning and transformation, numerical simulation, statistical modeling, data visualization, machine learning, and much more. Jupyter Notebook files have a file extension of `.ipynb`.
+![](img/UK-word-art.png)
 
-## 2. Apply for a Twitter developer account
+Furthermore, when we look at the word art comparison between the two we can also see some differences.
 
-In order to use Twitter API, you need to have a Twitter developer account from this [link](https://developer.twitter.com/en/apply-for-access). Please try **using your UW email for registration**.
 
-![](img/twitter_dev.png)
 
-In order to register your account, you will be prompted to answer a series of questions. Please answer those that are required to fill in and you can ignore optional questions.
-
-There has been a recent update on the twitter developer account permissions. This requires us to apply for the **Elevated** permissions for our developer account in order to use the filter functions in our python code. To do this, after we have our developer account and log into the developer portal, click on "Products" on the left side, and then "Twitter API v2", then click on the "Elevated" tab on the right, and then "Apply for Elevated".
-
-![](img/dev_elevated.png)
 
 You will need to provide some information about yourself, as well as why you need the Elevated permission. For the second section "Intended use," your can summarize and rephrase the lab description and also add your plan for the lab deliverable to answer the questions. You can choose "no" for the optional questions. Below is a screenshot of what I submitted for the application. **Please do not directly copy the answers in the screenshot for your own application.** I was instantly approved for the Elevated permission after submitting the application.
 
